@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+
+  flask_app:
+    build:
+      context: .
+    volumes:
+      - ./flask_prod_app/static/notebooks:/app/flask_prod_app/static/notebooks:z
+    ports:
+      - "8888:8888"
+    # command: tail -F anything
+    environment:
+      PORT: 8888
+    networks:
+      - flasknet
+
+networks:
+  flasknet:
+    driver: bridge
+
+volumes:
+  setup:
