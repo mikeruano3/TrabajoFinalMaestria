@@ -8,7 +8,7 @@ COPY . ./
 RUN pip install torch torchvision torchaudio
 RUN pip install pip pipenv --upgrade
 RUN pipenv install --skip-lock --system --dev
-RUN pip install Flask papermill chromedriver-binary requests 
+RUN pip install Flask papermill chromedriver-binary requests flask-cors 
 RUN pip install selenium==3.141.0 transformers keras==2.9.0 tensorflow==2.9.1 
 #RUN pip install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
 # RUN cp /usr/lib/chromium-browser/chromedriver /usr/bin

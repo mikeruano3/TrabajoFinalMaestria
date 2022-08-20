@@ -1,10 +1,13 @@
 from flask import Flask, render_template, request, jsonify
+from flask_cors import CORS, cross_origin
 import papermill as pm
 import os
 
 app=Flask(__name__, static_folder='static')
+CORS(app, support_credentials=True)
 
-@app.route('/')
+@cross_origin(supports_credentials=True)
+@app.route('/',  methods=['GET'])
 def index():
     return jsonify('PredictionAPI')
 
@@ -20,6 +23,7 @@ def NotebookExecuter(word_to_search, question_object):
         prediction = searchresult[0]['outputs'][0]['data']['text/plain']
     return prediction
 
+@cross_origin(supports_credentials=True)
 @app.route('/predict', methods = ['POST'])
 def result():
     if request.method == 'POST':
