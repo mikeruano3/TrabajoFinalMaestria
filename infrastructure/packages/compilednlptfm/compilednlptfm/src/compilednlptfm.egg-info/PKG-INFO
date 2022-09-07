@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: compilednlptfm
+Version: 0.0.1
+Summary: NLP package for UNIRs Finals
+Author: Miguel Ruano Roca
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# NLP compiled
+Compiled transformers NLP package
+
+Ref: https://towardsdatascience.com/how-to-publish-a-python-package-to-pypi-7be9dd5d6dcd
+
+To recompile
+
+```
+python -m pip install â€“-user â€“-upgrade setuptools wheel
+python setup.py sdist bdist_wheel
+```
+
+To install
+
+```
+pip install -e .
+```

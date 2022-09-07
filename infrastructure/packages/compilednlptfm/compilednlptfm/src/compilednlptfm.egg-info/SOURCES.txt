@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+compilednlptfm/src/compilednlptfm.egg-info/PKG-INFO
+compilednlptfm/src/compilednlptfm.egg-info/SOURCES.txt
+compilednlptfm/src/compilednlptfm.egg-info/dependency_links.txt
+compilednlptfm/src/compilednlptfm.egg-info/requires.txt
+compilednlptfm/src/compilednlptfm.egg-info/top_level.txt
+compilednlptfm/src/compilednlptfm.py
+compilednlptfm/src/compilednlptfm.egg-info/SOURCES.txt
