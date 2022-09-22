@@ -42,39 +42,41 @@ def loginToWebPage(driver):
 
 
 def navegarArticuloPorPalabra(driver, palabraABuscar, objetoPersona):
-    driver.get(f'https://elperiodico.com.gt/?s={palabraABuscar}&Submit=')
-
     try:
-        entradas_anteriores = driver.find_element_by_class_name('nav-previous')
-        entradas_anteriores.click()
+        try:
+            driver.get(f'https://elperiodico.com.gt/?s={palabraABuscar}&Submit=')
+            entradas_anteriores = driver.find_element_by_class_name('nav-previous')
+            entradas_anteriores.click()
+            link_articulo = driver.find_element_by_xpath('//*[@id="seccion"]/div[1]/div/a[1]')
+            link_articulo.click()
+        except:
+            print('No hay entradas anteriores')
+            driver.get(f'https://elperiodico.com.gt/?s={palabraABuscar}&Submit=')
+            link_articulo = driver.find_element_by_xpath('//*[@id="seccion"]/div[1]/div/a[1]')
+            link_articulo.click()
+
+        try:
+            title = driver.find_element_by_class_name('post-title-big').text
+        except:
+            title = palabraABuscar
+        date  = driver.find_element_by_xpath('//*[@id="space-meta"]').text
+        formatted_date = re.findall("\d\d-\d\d-\d\d", date)
+
+        articles_body = driver.find_element_by_xpath('//div[@class="flexible-article-content"]')
+
+        articles = articles_body.find_elements(By.TAG_NAME, 'p')
+
+        full_text = ''
+
+        for article in articles:
+            full_text = full_text + article.text + ' '
+
+        objetoPersona["title"] = title
+        objetoPersona["date"] = date
+        objetoPersona["full_text"] = full_text
+        objetoPersona["word_to_search"] = palabraABuscar
     except:
-        print('No hay entradas anteriores')
-
-    link_articulo = driver.find_element_by_xpath('//*[@id="seccion"]/div[1]/div/a[1]')
-    link_articulo.click()
-
-    try:
-        title = driver.find_element_by_class_name('post-title-big').text
-    except:
-        title = palabraABuscar
-    date  = driver.find_element_by_xpath('//*[@id="space-meta"]').text
-    formatted_date = re.findall("\d\d-\d\d-\d\d", date)
-
-    articles_body = driver.find_element_by_xpath('//div[@class="flexible-article-content"]')
-
-    from selenium.webdriver.common.by import By
-
-    articles = articles_body.find_elements(By.TAG_NAME, 'p')
-
-    full_text = ''
-
-    for article in articles:
-        full_text = full_text + article.text + ' '
-
-    objetoPersona["title"] = title
-    objetoPersona["date"] = date
-    objetoPersona["full_text"] = full_text
-    objetoPersona["word_to_search"] = palabraABuscar
+        print('Error obteniendo articulo.. :(')
     return objetoPersona
 
 def scrappearPersonaEnElPeriodico(peopleList = [ {"word_to_search": "Jimmy Morales"}, ]):
