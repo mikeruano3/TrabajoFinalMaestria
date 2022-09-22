@@ -43,6 +43,9 @@ def loginToWebPage(driver):
 
 def navegarArticuloPorPalabra(driver, palabraABuscar, objetoPersona):
     try:
+        title = ''
+        date = ''
+        full_text = ''
         try:
             driver.get(f'https://elperiodico.com.gt/?s={palabraABuscar}&Submit=')
             entradas_anteriores = driver.find_element_by_class_name('nav-previous')
