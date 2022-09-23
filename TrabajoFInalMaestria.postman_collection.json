@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "0e0d6f85-6f76-4f8d-a742-9f30be01234b",
+		"name": "TrabajoFInalMaestria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2011997"
+	},
+	"item": [
+		{
+			"name": "Predict",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"people\": [ \r\n       {\"word_to_search\": \"Jimmy Morales\", \r\n           \"question_object\": { \"1\": { \"question\": \"¿qué repercusión tuvo?\" },\r\n                        \"2\": { \"question\": \"¿Quién estuvo implicado?\" },\r\n                        \"3\": { \"question\": \"¿Corrupción?\" }\r\n                    }},\r\n        {\"word_to_search\": \"alejandro giammattei\", \r\n           \"question_object\": { \"1\": { \"question\": \"¿qué repercusión tuvo?\" },\r\n                        \"2\": { \"question\": \"¿Quién estuvo implicado?\" },\r\n                        \"3\": { \"question\": \"¿Corrupción?\" }\r\n                    }} \r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8888/predict",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8888",
+					"path": [
+						"predict"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PredictAWS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"people\": [ \r\n       {\"word_to_search\": \"Jimmy Morales\", \r\n           \"question_object\": { \"1\": { \"question\": \"¿qué repercusión tuvo?\" },\r\n                        \"2\": { \"question\": \"¿Quién estuvo implicado?\" },\r\n                        \"3\": { \"question\": \"¿Corrupción?\" }\r\n                    }},\r\n        {\"word_to_search\": \"Consuelo Porras\", \r\n           \"question_object\": { \"1\": { \"question\": \"¿qué repercusión tuvo?\" },\r\n                        \"2\": { \"question\": \"¿Quién estuvo implicado?\" },\r\n                        \"3\": { \"question\": \"¿Corrupción?\" }\r\n                    }} \r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-52-87-137-2.compute-1.amazonaws.com:8888/predict",
+					"protocol": "http",
+					"host": [
+						"ec2-52-87-137-2",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "8888",
+					"path": [
+						"predict"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Scrap",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"people\": [ \r\n       {\"word_to_search\": \"Jimmy Morales\", \r\n           \"question_object\": { \"1\": { \"question\": \"¿qué repercusión tuvo?\" },\r\n                        \"2\": { \"question\": \"¿Quién estuvo implicado?\" },\r\n                        \"3\": { \"question\": \"¿Corrupción?\" }\r\n                    },\r\n                    \"full_text\": \"La Fiscalía contra la Corrupción solicitó al Juzgado Octavo Penal desestimar la investigación que se había iniciado por la supuesta compra irregular de los aviones Pampa lll a Argentina y que vinculaba al expresidente Jimmy Morales.  El juzgado programó la diligencia para discutir la petición de la fiscalía el 22 de febrero de 2022. En la audiencia el Ministerio Público (MP) debe argumentar la razón por la que desiste de continuar con ese caso.  Según el MP, no existen medios que ameriten perseguir a ninguna persona, ya que se investigaba la posible compra de las aeronaves, pero al no concretarse, no hay hechos que indagar. “En los medios de investigación se establece que no hay hecho punible que proseguir”, afirmó el ente investigador. Este caso se originó el 2 de julio de 2019. Morales junto con el exministro de la Defensa, Luis Ralda, y la exministra de Relaciones Exteriores, Sandra Jovel, viajaron a Argentina a reunirse con el presidente de esa nación, Mauricio Macri, para concretar la negociación de la compra de los aviones. La adquisición de las aeronaves iba a tener un costo de US$28 millones. Este es otro proceso que el MP no seguirá contra el exmandatario, hace dos meses no apeló el rechazo de un antejuicio interpuesto contra dicho exfuncionario.  \"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8888/scrap",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8888",
+					"path": [
+						"scrap"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
