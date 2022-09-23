@@ -73,4 +73,8 @@ def predict():
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000)) or 5000
-    app.run(debug=False, host='0.0.0.0', port=port)
+    #app.run(debug=True, host='0.0.0.0', port=port)
+    host = "0.0.0.0"
+    from waitress import serve
+    print('Running server on ', host, ':', port)
+    serve(app, host=host, port=port)
