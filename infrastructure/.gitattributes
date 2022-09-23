@@ -1,0 +1,5 @@
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.dafbd6e6622cfaafea54bfe717b14fcacdaa069149af8fae4086afa5a9629ec3 filter=lfs diff=lfs merge=lfs -text
+*.dafbd6e6622cfaafea54bfe717b14fcacdaa069149af8fae4086afa5a9629ec3.json filter=lfs diff=lfs merge=lfs -text
+*.dafbd6e6622cfaafea54bfe717b14fcacdaa069149af8fae4086afa5a9629ec3.lock filter=lfs diff=lfs merge=lfs -text
+7966a0423b1c913c4e68d5399e17e4296eb2a7445564ae9ec574ae547efbe8bd.14d8bb83a1f0f787ccc04af18ea2125ec4a26e94474747d8b5834fb315e2caa4 filter=lfs diff=lfs merge=lfs -text
