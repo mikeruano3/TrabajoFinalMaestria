@@ -14,3 +14,8 @@ cd infrastructure
 docker-compose build
 docker-compose up -d
 ```
+
+To watch the logs
+```
+docker-compose logs -f
+```
