@@ -39,10 +39,14 @@ def locallyInitGlobalNLP():
 
 # ejecuta el PLN por partes
 def PLNExecuter(peopleList):
+    print("obteniendo scraping")
     web_scrapping_result = scrappearPersonaEnElPeriodico(peopleList)
+    print("noticias obtenidas", web_scrapping_result)
     #locallyInitGlobalNLP()
     #global nlp
+    print("inicializando nlp")
     nlp = initNlp()
+    print("resolviendo preguntas")
     result = askQuestion(nlp, web_scrapping_result)
     return result
 
@@ -66,6 +70,7 @@ def scrap():
 @app.route('/predict', methods = ['POST'])
 def predict():
     if request.method == 'POST':
+        print("Inicializando pedido de prediccion")
         content = request.json
         people = content['people']
         result = PLNExecuter(people)
