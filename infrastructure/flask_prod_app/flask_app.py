@@ -40,8 +40,9 @@ def locallyInitGlobalNLP():
 # ejecuta el PLN por partes
 def PLNExecuter(peopleList):
     web_scrapping_result = scrappearPersonaEnElPeriodico(peopleList)
-    locallyInitGlobalNLP()
-    global nlp
+    #locallyInitGlobalNLP()
+    #global nlp
+    nlp = initNlp()
     result = askQuestion(nlp, web_scrapping_result)
     return result
 
